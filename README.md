@@ -3,16 +3,44 @@ and is freely available for redistribution under the GPL-3.0 license. The origin
 under GPL-3.0, hence the license is GPL-3.0.
 
 
-The neural network can detect human face touch using Yolo V3. The idea comes from Keras creator
-[Francois Chollet tweet](https://twitter.com/fchollet/status/1234883862385156098?s=21).
+The neural network to detect human face touch in an image or video stream using Yolo V3.
+The idea comes from Keras creator [Francois Chollet tweet](https://twitter.com/fchollet/status/1234883862385156098?s=21).
 
 ### Demo
 
+Here is the network prediction on a [clip of Slavoj Zizek](demo_videos/slavoj_zizek_touches_his_face.mp4)
+<video controls width="250">
 
-### Inference
+    <source src="demo_videos/output/slavoj_zizek_touches_his_face.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+Prediction on set of [17 images](demo_images)
+
+<img src="test_images.png">
+
+### Installation (Mac)
+- `conda env create -f environment.yml`. This is for Mac OSX.
+- `conda activate facetouch`.
+
+### Installation (Non-Mac)
+
+- Create a virtual environment and install requirements using conda and pip.
+- `conda install cython numpy`
+- `pip install -r requirements.txt`.
+
+If you issue with installation, all you need is the following libraries,
+`pytorch, torchvision, matplotlib, pycocotools, numpy, opencv-python, opencv-python-headless`.
+
+TODO: Add the dockerfile
+
+
+### Inference(after installation)
 
 - Download the pretrained weights, `gdown https://drive.google.com/uc?id=16lYS4bcIdM2HdmyJBVDOvt3Trx6N3W2R`.
-- Remove the webcam lid or paper(if any),
+- Remove the webcam lid or sticker(if any),
 `python detect.py --cfg cfg/yolov3-1cls.cfg --weights best_dataset_v5.pt --source 0`.
 - Note, while rendering the UI (QT) for webcam or audio, the depending on OS, you may encounter errors.
 - To run on set of images or videos, run the command,
@@ -25,7 +53,7 @@ The output is stored in `output` directory.
 - The documentation for transfer learning is available in the original [repo wiki](https://github.com/ultralytics/yolov3/wiki/Example:-Transfer-Learning).
 - Download the dataset using gdown `gdown https://drive.google.com/uc?id=1ziZ0Bw40KE4pfxezyjq7FMzOntDNNzuu`.
 - Unzip the dataset, `unzip dataset_v5.zip`.
-- Download the pretrained weights, `gdown https://drive.google.com/uc?id=16lYS4bcIdM2HdmyJBVDOvt3Trx6N3W2R`.
+- Download the pretrained weights from ultralytics, `gdown https://drive.google.com/uc?id=16lYS4bcIdM2HdmyJBVDOvt3Trx6N3W2R`.
 - Train the network, `python train.py --weights yolov3-spp.weights --data dataset_v5/coco1.data --cfg cfg/yolov3-1cls.cfg`.
 - The train will run 300 epochs and store the results in the `weights` directory.
 The `best.pt` is the `weights` is used for later inference.
@@ -47,8 +75,8 @@ The annotation will be stored in the same directory. Do it for all images direct
 `$python dataset.py --directories face_touch --directories chin_leaning --name dataset_v5`.
 This will create `dataset_v5` directory and zip file with `labels` and `images` directories along with train and valid split.
 
-``` bash
-$ls -lat dataset_v5                                                                                                          (torch_yolov3)  (14m 20s 710ms)
+```bash
+$ls -lat dataset_v5
 total 128
 drwxr-xr-x  59 user  staff   1888 Mar 15 22:02 ..
 -rw-r--r--   1 user  staff     91 Mar 15 17:24 coco1.data
@@ -59,7 +87,7 @@ drwxr-xr-x   9 user  staff    288 Mar 15 17:24 .
 -rw-r--r--   1 user  staff  36893 Mar 15 17:24 train.txt
 drwxr-xr-x   5 user  staff    160 Mar 15 17:24 labels
 drwxr-xr-x   5 user  staff    160 Mar 15 17:24 images
-$s -lat dataset_v5/images/                                                                                                                    (torch_yolov3)
+$ls -lat dataset_v5/images/
 total 0
 drwxr-xr-x    9 user  staff    288 Mar 15 17:24 ..
 drwxr-xr-x  106 user  staff   3392 Mar 15 17:24 test
@@ -67,3 +95,6 @@ drwxr-xr-x    5 user  staff    160 Mar 15 17:24 .
 drwxr-xr-x  158 user  staff   5056 Mar 15 17:24 val
 drwxr-xr-x  782 user  staff  25024 Mar 15 17:24 train
 ```
+
+- The data used for training can be found in Google Drive in the name
+`dataset_v5.zip` - https://drive.google.com/drive/u/0/folders/17-rLAQ9GLda7M5mvDiitINqSLBUj_wbm
