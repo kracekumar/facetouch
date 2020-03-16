@@ -10,12 +10,14 @@ The idea comes from Keras creator [Francois Chollet tweet](https://twitter.com/f
 
 Here is the network prediction on a [clip of Slavoj Zizek](demo_videos/slavoj_zizek_touches_his_face.mp4)
 
-<video controls width="250">
-<source src="demo_videos/output/slavoj_zizek_touches_his_face.mp4"
-            type="video/mp4">
+Source:
 
-Sorry, your browser doesn't support embedded videos.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YvJocp4Ovzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Network output on the first ten second clip of the original video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n44WsmRiAvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Prediction on set of [17 images](demo_images)
 
