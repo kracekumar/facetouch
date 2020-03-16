@@ -11,7 +11,6 @@ The idea comes from Keras creator [Francois Chollet tweet](https://twitter.com/f
 Here is the network prediction on a [clip of Slavoj Zizek](demo_videos/slavoj_zizek_touches_his_face.mp4)
 
 Source:
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YvJocp4Ovzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
