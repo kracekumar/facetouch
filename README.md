@@ -9,12 +9,12 @@ The idea comes from Keras creator [Francois Chollet tweet](https://twitter.com/f
 ### Demo
 
 Here is the network prediction on a [clip of Slavoj Zizek](demo_videos/slavoj_zizek_touches_his_face.mp4)
-<video controls width="250">
 
-    <source src="demo_videos/output/slavoj_zizek_touches_his_face.mp4"
+<video controls width="250">
+<source src="demo_videos/output/slavoj_zizek_touches_his_face.mp4"
             type="video/mp4">
 
-    Sorry, your browser doesn't support embedded videos.
+Sorry, your browser doesn't support embedded videos.
 </video>
 
 Prediction on set of [17 images](demo_images)
