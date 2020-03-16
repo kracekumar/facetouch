@@ -10,13 +10,10 @@ The idea comes from Keras creator [Francois Chollet tweet](https://twitter.com/f
 
 Here is the network prediction on a [clip of Slavoj Zizek](demo_videos/slavoj_zizek_touches_his_face.mp4)
 
-Source:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YvJocp4Ovzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Source: [https://www.youtube.com/embed/YvJocp4Ovzg](https://www.youtube.com/embed/YvJocp4Ovzg)
 
 
-Network output on the first ten second clip of the original video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n44WsmRiAvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Network output on the first ten second clip of the original video - [https://www.youtube.com/embed/n44WsmRiAvY](https://www.youtube.com/embed/n44WsmRiAvY)
 
 Prediction on set of [17 images](demo_images)
 
@@ -43,7 +40,7 @@ TODO: Add the dockerfile
 - Download the pretrained weights, `gdown https://drive.google.com/uc?id=16lYS4bcIdM2HdmyJBVDOvt3Trx6N3W2R`.
 - Remove the webcam lid or sticker(if any),
 `python detect.py --cfg cfg/yolov3-1cls.cfg --weights best_dataset_v5.pt --source 0`.
-- Note, while rendering the UI (QT) for webcam or audio, the depending on OS, you may encounter errors.
+- Note, while rendering the UI (QT) for webcam or audio, the depending on OS, you may encounter errors. Now you can leave the webcam on in the background and hear the sound "Don't touch the face" while you bring the hand close to your face.
 - To run on set of images or videos, run the command,
 `python detect.py --cfg cfg/yolov3-1cls.cfg --weights best_dataset_v5.pt --source test_images`.
 The output is stored in `output` directory.
