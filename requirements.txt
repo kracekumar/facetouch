@@ -45,7 +45,7 @@ torchvision==0.5.0
 tornado==6.0.4
 tqdm==4.42.1
 typed-ast==1.4.0
-urllib3==1.25.8
+urllib3==1.26.5
 virtualenv==16.7.5
 virtualenv-clone==0.5.3
 virtualenvwrapper==4.8.4
